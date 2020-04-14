@@ -1,17 +1,26 @@
 # Ansible For GEM
 
-This repository is my testing ground for ansible. The objective is to create an ansible playbook that will load necessary software from a control host onto a CTP7 or GLIB.
+This repository is my testing ground for ansible. The objective is to create an ansible playbook that will load necessary software from a control host onto an AMC (CTP7 or GLIB).
 
 ## Instructions
 
 Make sure that you are logged into the control host and that it has ansible installed.
 
-### Connecting to CTP7s/GLIBs
+### Connecting to AMCs
 
-First, write the name of the CTP7/GLIB in `ansible_hosts` and make sure that the control host has access to the CTP7/GLIB. Then, try pinging the CTP7/GLIB with the gemuser.
+First, write the name of the AMCs in `ansible_hosts` and make sure that the control host has access to the AMC. Then, try pinging the AMC with the gemuser.
 
 ```bash
 ansible all -u gemuser -i ansible_hosts -m ping
+```
+
+If this is successful, you should see:
+
+```bash
+gem-shelf01-amc01 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
 ```
 
 
