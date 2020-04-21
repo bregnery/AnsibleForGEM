@@ -1,0 +1,5 @@
+---
+- hosts: glibs, ctp7s
+  roles:
+  - { role: amc, tags: amc }
+  become: yes

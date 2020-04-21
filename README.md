@@ -23,4 +23,14 @@ gem-shelf01-amc01 | SUCCESS => {
 }
 ```
 
+### Creating the AMC role
+
+To create the AMC role, use the AMC host list.
+
+```bash
+ansible-playbook amc.yml -i amc_hosts 
+```
+
+
+
 
