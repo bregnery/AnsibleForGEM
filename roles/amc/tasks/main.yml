@@ -1,3 +1,14 @@
 ---
+- name: "Install sudo if not there"
+  raw: |
+    test -e /usr/bin/sudo || apt install -y sudo
+  register: output
+  changed_when: output.stdout|trim() != ""
+
 - name: "Download OptoHybrid Firmware"
-  get_url:  
+  get_url: 
+    url: https://github.com/cms-gem-daq-project/OptoHybridv3/releases/download/{{oh_firmware_version}}.X/OH_{{oh_firmware_version}}.tar.gz
+    dest: "{{gemdaq_dir}}/OH_{{oh_firmware_version}}.tar.gz"
+
+
+
